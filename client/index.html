@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ChatSquare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="chatContainer">
+        <div class="sidebar">
+            <h2>ChatSquare<sup>2</sup></h2><br>
+            <h4>Online Users</h4>
+            <ul id="users"></ul>
+            <div class="userPanel">
+
+                <div><img src="/assets/profile.svg" alt="id"></div>
+
+                <div class="userInfo">
+                    <span id="currentUser"></span>
+                    <span class="status">online</span>
+                    <span class="disconnect" onclick="disconnectUser()">⮕</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatArea">
+
+            <div id="messages"></div>
+
+            <div class="inputArea">
+                <input id="msg" placeholder="Type message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
