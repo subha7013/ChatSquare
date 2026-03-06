@@ -223,3 +223,110 @@ cursor:pointer;
 
 }
 
+@media (max-width:768px){
+
+/* main container becomes vertical */
+
+.chatContainer{
+flex-direction:column;
+height:100vh;
+}
+
+/* sidebar becomes top section */
+
+.sidebar{
+width:100%;
+min-width:100%;
+padding:20px;
+padding-top: 30px;
+border-radius:0;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+/* online users list becomes horizontal scroll */
+
+.sidebar ul{
+flex-direction:row;
+gap:15px;
+overflow-x:auto;
+padding:10px 0;
+}
+
+.sidebar li{
+border:none;
+padding:8px 12px;
+background:rgba(255,255,255,0.1);
+border-radius:10px;
+white-space:nowrap;
+}
+
+/* chat area fills remaining screen */
+
+.chatArea{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+/* messages container */
+
+#messages{
+flex:1;
+padding:15px;
+overflow-y:auto;
+}
+
+/* message bubbles */
+
+.message{
+max-width:85%;
+padding:12px;
+font-size:14px;
+}
+
+/* input area */
+
+.inputArea{
+padding: 13px 0px 200px 13px;
+display:flex;
+gap:8px;
+}
+
+input{
+flex:1;
+padding:10px;
+font-size:16px;
+}
+
+button{
+padding:10px 14px;
+font-size:14px;
+}
+
+/* user panel at bottom */
+
+.userPanel{
+position:static;
+margin-top:10px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* avatar smaller */
+
+.userPanel img{
+width:35px;
+height:35px;
+}
+
+/* username text */
+
+.userInfo{
+font-size:14px;
+}
+
+}
+
