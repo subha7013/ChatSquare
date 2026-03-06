@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000");
+const socket = io("https://chatsquare.onrender.com");
 
 let username = prompt("Enter your name");
 
@@ -105,5 +105,6 @@ socket.disconnect();
 alert("Disconnected from chat");
 
 location.reload();
+
 
 }
