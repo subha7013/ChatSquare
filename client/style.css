@@ -235,11 +235,14 @@ padding:20px;
 .inputArea{
 position:sticky;
 bottom:0;
+margin-left: 20px;
+margin-right: 3px;
 }
 
 .message{
 max-width:80%;
 font-size:14px;
+  margin-left: 10px;
 }
 
 input{
@@ -254,4 +257,5 @@ align-items:center;
 }
 
 }
+
 
