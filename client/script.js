@@ -2,8 +2,8 @@ const socket = io("https://chatsquare.onrender.com");
 
 let username = prompt("Enter your name");
 
-if(!username || username.trim()===""){
-username = "Guest";
+if (!username || username.trim() === "") {
+    username = "Guest";
 }
 
 document.getElementById("currentUser").innerText = username;
@@ -88,38 +88,33 @@ socket.on("userList", (users) => {
 
 /* SEND PRIVATE MESSAGE */
 
-function sendMessage(){
+function sendMessage() {
 
-const msg = msgInput.value.trim();
+    const msg = msgInput.value.trim();
 
-if(!msg) return;
+    if (!msg) return;
 
-if(!selectedUser){
-alert("Select a user first");
-return;
+    if (!selectedUser) {
+        alert("Select a user first");
+        return;
+    }
+
+    socket.emit("privateMessage", {
+        to: selectedUser,
+        message: msg
+    });
+
+    msgInput.value = "";
 }
 
-socket.emit("privateMessage",{
-to:selectedUser,
-message:msg
-});
-
-msgInput.value="";
-}
-
-function disconnectUser(){
+function disconnectUser() {
 
     const confirmDisconnect = confirm("Do you want to disconnect?");
 
-    if(confirmDisconnect){
+    if (confirmDisconnect) {
         socket.disconnect();
         alert("Disconnected from chat");
         location.reload();
     }
 
 }
-
-
-}
-
-
