@@ -23,11 +23,21 @@ socket.on("privateMessage", (data) => {
     const div = document.createElement("div");
     div.classList.add("message");
 
-    div.innerHTML = `
-        <div class="msgUser">${data.user}</div>
-        <div class="msgText">${data.text}</div>
-        <div class="msgTime">${data.time}</div>
-    `;
+    const user = document.createElement("div");
+    user.className = "msgUser";
+    user.textContent = data.user;
+
+    const text = document.createElement("div");
+    text.className = "msgText";
+    text.textContent = data.text;   // important
+
+    const time = document.createElement("div");
+    time.className = "msgTime";
+    time.textContent = data.time;
+
+    div.appendChild(user);
+    div.appendChild(text);
+    div.appendChild(time);
 
     messages.appendChild(div);
 
@@ -56,7 +66,7 @@ socket.on("userList", (users) => {
     users.forEach(([id, name]) => {
 
         const li = document.createElement("li");
-        li.innerText = name;
+        li.textContent = name;
 
         li.onclick = () => {
 
@@ -108,3 +118,4 @@ location.reload();
 
 
 }
+
