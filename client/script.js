@@ -107,15 +107,19 @@ message:msg
 msgInput.value="";
 }
 
-// Disconnection
 function disconnectUser(){
 
-socket.disconnect();
+    const confirmDisconnect = confirm("Do you want to disconnect?");
 
-alert("Disconnected from chat");
+    if(confirmDisconnect){
+        socket.disconnect();
+        alert("Disconnected from chat");
+        location.reload();
+    }
 
-location.reload();
+}
 
 
 }
+
 
