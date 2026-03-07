@@ -10,9 +10,11 @@ body {
 
 .chatContainer {
     display: flex;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
+    
 }
+
 
 /* SIDEBAR */
 
@@ -40,8 +42,8 @@ body {
     flex-direction: column;
     gap: 18px;
 
-    max-height: 50vh;
-    overflow-y: auto;
+    flex:1;
+    overflow-y:auto;
 }
 .sidebar ul::-webkit-scrollbar {
     width: 6px;
@@ -262,13 +264,11 @@ img {
 
     /* chat area full width */
 
-    .chatArea {
-        width: 100%;
-        position: relative;
-        left: 100px;
-        height: 85vh;
-        padding-right: 50px;
-    }
+.chatArea {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    height: 100vh;
+}
 
 
     #messages {
@@ -276,22 +276,16 @@ img {
         padding: 22px;
         overflow-y: auto;
         background: transparent;
-        padding-bottom: 120px;
+        padding-bottom:90px;
     }
 
-    .inputArea {
-        position: fixed;
-        bottom: 2px;
-        left: 60px;
-        right: 0;
-        height: 15vh;
-        display: flex;
-        gap: 10px;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(4px);
-        border-top: 1px solid #ddd;
-    }
+.inputArea {
+    position: fixed;
+    bottom: 0;
+    left: 60px;
+    right: 0;
+    padding: 10px;
+}
     .inputArea input{
         font-size:16px;
     }
@@ -312,9 +306,11 @@ img {
         right: 10px;
         display: flex;
         flex-direction: column;
+        margin-top:auto;
+        padding-top:20px;
     }
-
 }
+
 
 
 
