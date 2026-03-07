@@ -307,7 +307,7 @@ img {
 
     .userPanel {
         position: absolute;
-        bottom: 200px;
+        bottom: 70px;
         left: 10px;
         right: 10px;
         display: flex;
@@ -315,6 +315,7 @@ img {
     }
 
 }
+
 
 
 
