@@ -56,11 +56,9 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-
+    padding-top: 25px;
     background-image: url("/assets/chat-bg.jpg");
-    /* background-size:cover;
-background-position:center;
-background-repeat:no-repeat; */
+    position: relative;
 }
 
 /* MESSAGES AREA */
@@ -129,15 +127,6 @@ background-repeat:no-repeat; */
     margin: 12px 0;
 }
 
-/* TYPING TEXT */
-
-#typing {
-    height: 20px;
-    padding-left: 20px;
-    color: #666;
-    font-style: italic;
-}
-
 /* INPUT AREA */
 
 .inputArea {
@@ -190,7 +179,8 @@ button:hover {
     justify-content: space-between;
     gap: 10px;
 }
-.userPanel img{
+
+.userPanel img {
     filter: invert();
 }
 
@@ -216,117 +206,91 @@ img {
 }
 
 
-.disconnect{
-font-size:24px;
-color:white;
-cursor:pointer;
-
+.disconnect {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
-@media (max-width:768px){
-
-/* main container becomes vertical */
-
-.chatContainer{
-flex-direction:column;
-height:100vh;
+.mob {
+    display: none;
 }
 
-/* sidebar becomes top section */
+@media (max-width:768px) {
 
-.sidebar{
-width:100%;
-min-width:100%;
-padding:20px;
-padding-top: 30px;
-border-radius:0;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
+    /* sidebar hidden by default */
+    .desk {
+        display: none;
+    }
 
-/* online users list becomes horizontal scroll */
+    .mob {
+        display: block;
+    }
 
-.sidebar ul{
-flex-direction:row;
-gap:15px;
-overflow-x:auto;
-padding:10px 0;
-}
+    .sidebar {
+        position: fixed;
+        left: 0px;
+        top: 0;
+        height: 100vh;
+        width: 10%;
+        z-index: 1000;
+        transition: 0.3s;
+        border-radius: 0;
+        padding-bottom: 30px;
+    }
 
-.sidebar li{
-border:none;
-padding:8px 12px;
-background:rgba(255,255,255,0.1);
-border-radius:10px;
-white-space:nowrap;
-}
+    .sidebar.show {
+        left: 100px;
+    }
 
-/* chat area fills remaining screen */
 
-.chatArea{
-flex:1;
-display:flex;
-flex-direction:column;
-}
+    /* chat area full width */
 
-/* messages container */
+    .chatArea {
+        width: 100%;
+        position: relative;
+        left: 100px;
+        padding-right: 50px;
+    }
 
-#messages{
-flex:1;
-padding:15px;
-overflow-y:auto;
-}
 
-/* message bubbles */
+    #messages {
+        flex: 1;
+        padding: 25px;
+        overflow-y: auto;
+        background: transparent;
+        padding-bottom: 80px;
+    }
 
-.message{
-max-width:85%;
-padding:12px;
-font-size:14px;
-}
+    .inputArea {
+        position: fixed;
+        bottom: 15px;
+        left: 100px;
+        right: 0;
+        display: flex;
+        gap: 10px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(4px);
+        border-top: 1px solid #ddd;
+    }
 
-/* input area */
+    /* message bubbles */
 
-.inputArea{
-padding: 13px 0px 200px 13px;
-display:flex;
-gap:8px;
-}
+    .message {
+        max-width: 80%;
+        font-size: 14px;
+    }
 
-input{
-flex:1;
-padding:10px;
-font-size:16px;
-}
+    /* user panel reposition */
 
-button{
-padding:10px 14px;
-font-size:14px;
-}
-
-/* user panel at bottom */
-
-.userPanel{
-position:static;
-margin-top:10px;
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-/* avatar smaller */
-
-.userPanel img{
-width:35px;
-height:35px;
-}
-
-/* username text */
-
-.userInfo{
-font-size:14px;
-}
+    .userPanel {
+        position: absolute;
+        bottom: 200px;
+        left: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+    }
 
 }
-
