@@ -234,7 +234,7 @@ img {
         left: 0px;
         top: 0;
         height: 100vh;
-        width: 10%;
+        width:60px;
         z-index: 1000;
         transition: 0.3s;
         border-radius: 0;
@@ -259,24 +259,27 @@ img {
 
     #messages {
         flex: 1;
-        padding: 25px;
+        padding: 22px;
         overflow-y: auto;
         background: transparent;
-        padding-bottom: 80px;
+        padding-bottom: 120px;
     }
 
     .inputArea {
         position: fixed;
-        bottom: 15px;
-        left: 100px;
+        bottom: 2px;
+        left: 60px;
         right: 0;
         height: 15vh;
         display: flex;
         gap: 10px;
-        padding: 15px;
+        padding: 12px;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(4px);
         border-top: 1px solid #ddd;
+    }
+    .inputArea input{
+        font-size:16px;
     }
 
     /* message bubbles */
@@ -298,6 +301,7 @@ img {
     }
 
 }
+
 
 
 
