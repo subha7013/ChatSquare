@@ -240,7 +240,7 @@ img {
     }
 
     .sidebar.show {
-        left: 0;
+        left: 100px;
     }
 
 
@@ -294,4 +294,5 @@ img {
     }
 
 }
+
 
